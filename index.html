@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ecodibba</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+  
+
+
+</head>
+<body >
+
+  <nav class="navbar">
+    <div class="container">
+        <a href="#" class="brand-logo"><img src="logo.png" width="160px" style="margin-top: 3%;"></a>
+        <button class="navbar-toggler">&#9776;</button>
+        <div class="navbar-links">
+            <a href="#">Home</a>
+            <a href="#">RFQ form</a>
+            <a href="#">Digital Card</a>
+            <a href="#">Rate Calculator</a>
+        </div>
+    </div>
+   
+</nav>
+<div class="side-menu" >
+  <div class="container" style="display: block;">
+    <a href="#">Home</a>
+    <a href="#">RFQ form</a>
+    <a href="#">Digital Card</a>
+    <a href="#">Rate Calculator</a>
+  </div>
+</div>
+
+
+<div class="content">
+  
+  <div class="wrapper">
+
+    <div class="form_wrap">
+      <div class="form_1 data_info">
+        <h2>Quotation Request</h2>
+        <form id="form1" method="post" action="">
+          <div class="form_container">
+            <select id="product" class="form-input" name="product" required>
+                          <option value="" selected disabled>Select Product</option>
+                          <option value="Corrugated Box / Carton Box" style="background-image: url('corrugated.jpg');">Corrugated Box / Carton Box</option>
+                          <option value="Paper Bag">Paper Bag</option>
+                          <option value="Thank-you Card">Thank-you Card</option>
+                          <option value="Paper Tags">Paper Tags</option>
+                          <option value="Tapes">Tapes</option>
+                          <option value="Rigid Box / Kappa">Rigid / Kappa Box</option>
+                          <option value="Paper Box">Paper Box</option>
+                        </select>
+                        <div class="form-row" style="display: flex;">
+                          <input type="text" id="length" class="form-input" placeholder="Length (inch)"
+                            style="flex: 1; margin-right: 5px;" name="length" required>
+                          <input type="text" id="width" class="form-input" placeholder="Width (inch)"
+                            style="flex: 1; margin-right: 5px;" name ="width">
+                          <input type="text" id="height" class="form-input" placeholder="Height (inch)" style="flex: 1;" name="height" required>
+                        </div>
+                        <div class="form-row" style="display: flex;">
+                          <input type="text" id="quantity" class="form-input" placeholder="Quantity Needed"
+                            style="flex: 1; margin-right: 5px;" name="quantity" required>
+                          
+                          <select id="color" class="form-input"  required style="flex: 1;margin-right: 5px;" name="color">
+                              <option value="" selected disabled>Select colour</option>
+                              <option value="No" selected >No colour</option>
+                              <option value="Single">Single colour</option>
+                              <option value="Two">Two colour</option>
+                              <option value="Three">Three colour</option>
+                              <option value="Two">Multiple colour</option>
+                            </select>
+                          
+                          <select id="printed" class="form-input" required style="flex: 1;" name="printed">
+                            <option value="" selected disabled>Printed? Select Option</option>
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                          </select>
+                        </div>
+
+                        <div class="form-row" >
+                          <input type="text" id="quantity" class="form-input" placeholder="Quantity Needed"
+                            style="flex: 1; margin-right: 5px;" name="quantity" required>
+                            <input type="text" id="budget" class="form-input" placeholder="INR Budget (without GST)" style="flex: 1;"
+                            name="Budget" required>
+                        </div>
+                
+                        <div id="designOptionContainer" style="display: none;">
+                          <select id="designOption" class="form-input" style="width: 100%;" name="design">
+                            <option value="" selected disabled>Design / Logo file available? Select Option</option>
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                          </select>
+                        </div>
+                
+                        
+                          
+                         <textarea id="productRequirements" class="form-input" placeholder="Detailed Product Requirements"></textarea>
+                        
+                
+                        
+                        <div class="form-row" id="Attachments" style="display: none;">
+                          
+                          <div class="file-input-container " style="flex:1;margin-right: 5px;">
+                            <label for="uploadLogo" class="form-label" style="font-size: 11px;">Upload Logo (file type: .pdf,.doc,.docx,.cdr,.jpg,.jpeg,.png,.psd)</label>
+                            <input type="file" id="uploadLogo" class="form-input" accept=".pdf,.doc,.docx,.cdr,.jpg,.jpeg,.png,.psd" style="flex:1;">
+                          </div>
+                            <div id="uploadDesignContainer" style="flex:1;" >
+                              <label for="uploadDesign" class="form-label" style="font-size: 11px;margin-left: 3px;" accept=".pdf,.doc,.docx,.cdr,.psd">Upload Design (file type: .pdf,.doc,.docx,.cdr,.psd)</label>
+                              <input type="file" id="uploadDesign" class="form-input" style="width: 100%;">
+                            </div>
+                          </div>
+
+                         
+                       
+                        <select id="sourcingPurpose" class="form-input" required name="consumption">
+                          <option value="" selected disabled id="sourcingPurpose">Sourcing Purpose</option>
+                          <option value="Personal consumption">Personal consumption</option>
+                          <option value="Business consumption">Business consumption</option>
+                        </select>
+                
+                        <div id="businessFields" style="display: none;">
+                          <input type="text" id="companyName" class="form-input" placeholder="Company or Business Name">
+                          <input type="text" id="gstNo" class="form-input" placeholder="Company GST No.">
+                        </div>
+                
+          </div>
+        </form>
+      </div>
+      
+      <div class="form_2 data_info" style="display: none;">
+        <h2>Billing Details</h2>
+        <form id="form3">
+                  
+                  <input type="text" id="fullname" class="form-input" placeholder="Full Name" required>
+                 
+              
+                      <input type="text" id="billingAddress" class="form-input" placeholder="Billing Address" required>
+                
+                    <div class="form-row" style="display: flex;">
+                      <input type="text" id="billingPinCode" class="form-input" placeholder="Pin Code"
+                        style="flex: 1; margin-right: 5px;" required>
+                      <input type="text" id="billingTownCity" class="form-input" placeholder="Town/City"
+                        style="flex: 1; margin-right: 5px;" required>
+                    </div>
+                    <div class="form-row" style="display: flex;">
+                      
+                        <input type="text" id="billingState" class="form-input" placeholder="State"
+                        style="flex: 1; margin-right: 5px;" required>
+                      <input type="text" id="country" class="form-input" placeholder="Country" style="flex: 1;">
+                    </div>
+                    <input type="text" id="landmark" class="form-input" placeholder="Landmark">
+                    <div class="form-row">
+                      <input type="text" id="phone" class="form-input" placeholder="Phone #" style="flex: 1; margin-right: 5px;">
+                      <input type="text" id="altPhone" class="form-input" placeholder="Alternative phone # (if available)"
+                        style="flex: 1;">
+                    </div>
+                    <div class="form-row">
+                      <select id="shippingAddress" class="form-input" onchange="toggleShippingAddress()">
+                        <option value="same">Ship to same address</option>
+                        <option value="different">Ship to different address</option>
+                      </select>
+                    </div>
+                    <div id="shippingAddressFields" style="display: none;">
+                      <!-- Add your shipping address fields here -->
+                    </div>
+            
+                    
+        </form>
+      </div>
+          <div class="form_4 data_info" style="display: none;">
+        <h2>Shipping Details</h2>
+        <form id="form4">
+                  <input type="text" id="fullName" class="form-input" placeholder="Full Name" required>
+          <input type="text" id="address" class="form-input" placeholder="Address" required>
+          <input type="text" id="landmark" class="form-input" placeholder="Landmark" required>
+          <div class="form-row" style="display: flex;">
+            <input type="text" id="townCity" class="form-input" placeholder="Town/City"
+              style="flex: 1; margin-right: 5px;" required>
+            <input type="text" id="country" class="form-input" placeholder="Country" style="flex: 1; margin-right: 5px;"
+              required>
+            <input type="text" id="pinCode" class="form-input" placeholder="Pin code" style="flex: 1;" required>
+          </div>
+          <select id="requirementType" class="form-input" required>
+            <option value="" selected disabled>Requirement Type</option>
+            <option value="Immediate">Immediate (within 15 days)</option>
+            <option value="MarketRate">Market Rate Check for potential future order</option>
+          </select>
+          <select id="needOrderInDays" class="form-input" required>
+            <option value="" selected disabled>Need Order in days</option>
+            <script>
+              for (let i = 16; i <= 90; i++) {
+                document.write(`<option value="${i}">${i} days</option>`);
+              }
+            </script>
+          </select>
+          <div class="form-row">
+            <input type="checkbox" id="agreeBusinessDetails" required>
+            <label for="agreeBusinessDetails">I agree to share my Business details & requirement with ecodibba
+              verified & trusted supplier</label>
+          </div>
+          <div class="form-row">
+            <input type="checkbox" id="agreeBuyingRules" required>
+            <label for="agreeBuyingRules">I have read, understood, and agreed to abide by the Buying Request
+              Posting Rules</label>
+          </div>
+  
+            
+                    
+        </form>
+      </div>
+    </div>
+    <div class="btns_wrap">
+      <div class="common_btns form_1_btns">
+        <button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+      </div>
+      <div class="common_btns form_2_btns" style="display: none;">
+        <button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
+        <button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+      </div>
+          
+      <div class="common_btns form_4_btns" id="last_buttons" style="display: none;">
+        <button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
+        <button type="button" class="btn_done">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal_wrapper">
+    <div class="shadow"></div>
+    <div class="success_wrap">
+      <span class="modal_icon"><ion-icon name="checkmark-sharp"></ion-icon></span>
+      <p>You have successfully completed the process.</p>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+<script type="text/javascript" src="scripts.js"></script>
+
+</body>
+</html>
