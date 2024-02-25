@@ -476,7 +476,7 @@ body{
 
 
 
-@media (max-width: 1440px) {
+@media (pointer: fine), (pointer: none){
 	
 	.wrapper{
 		width:68%;
@@ -501,7 +501,7 @@ body{
 	}
 }
 
-@media (max-width: 768px) {
+@media (pointer: coarse) {
 	.navbar-links {
         display: none;
     }
